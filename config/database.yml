@@ -1,0 +1,9 @@
+common: &common
+  adapter: mysql
+  username: root
+  password:
+  host: localhost
+  database: world_cup_dev
+
+development:
+  <<: *common

@@ -1,0 +1,27 @@
+<html>
+<head>
+<link href="/css/bootstrap.css" rel="stylesheet">
+<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1>Standings</h1>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Total points</th>
+      <th>Max points</th>
+    </tr>
+    <% @users.all.sort{|a,b| b.total_points <=> a.total_points}.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.total_points %></td>
+        <td><%= user.best_possible %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= Team.find(22).name %>
+</div>
+</body>
+</html>
